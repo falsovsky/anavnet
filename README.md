@@ -18,10 +18,10 @@ Requires the following libraries to work:
 
 ### Installation
 
-To iInstall the dependencies:
+To install:
 
 ```sh
-$ pip install -r requirements.txt
+$ pip install anavnet
 ```
 Or use [virtualenv](https://virtualenv.pypa.io/en/stable/).
 
