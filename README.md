@@ -29,7 +29,7 @@ Or use [virtualenv](https://virtualenv.pypa.io/en/stable/).
 ```python
 >>> from anavnet import AnavNet
 >>> anavnet = AnavNet()
->>> anavnet.set_porto(16)
+>>> anavnet.set_port(16)
 >>> anavnet.total
 >>> 12
 >>> anavnet.get_message(1)
