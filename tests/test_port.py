@@ -8,12 +8,6 @@ class TestPort(unittest.TestCase):
         with self.assertRaises(KeyError):
             anavnet.set_port(666)
 
-    def test_get_port_name(self):
-        anavnet = AnavNet()
-        port = 34
-        anavnet.set_port(port)
-        self.assertEqual(anavnet.get_port_name(), anavnet.get_ports()[port])
-
     def test_get_port_name_not_set(self):
         anavnet = AnavNet()
         with self.assertRaises(RuntimeError):
