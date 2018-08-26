@@ -1,5 +1,5 @@
 import unittest
-from anavnet import AnavNet
+from anavnet.anavnet import AnavNet
 
 
 class TestMessage(unittest.TestCase):

@@ -1,0 +1,73 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import argparse
+import json
+import sys
+
+sys.path.append('../')
+
+from anavnet.anavnet import AnavNet
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    group = parser.add_mutually_exclusive_group(required=True)
+
+    group.add_argument("--list", help="Lists available ports", action="store_true")
+    group.add_argument("--total", nargs=1, type=int, help="Gets the total of messages.Argument: PORT_ID")
+    group.add_argument("--text", nargs=2, type=int,
+                       help="Get message as formatted text. Arguments: PORT_ID, MESSAGE_INDEX")
+    group.add_argument("--json", nargs=2, type=int, help="Get message as JSON. Arguments: PORT_ID, MESSAGE_INDEX")
+    args = parser.parse_args()
+
+    if args.list:
+        anavnet = AnavNet()
+        print("The current available ports are:")
+        for port in anavnet.get_ports():
+            print(" * {}\t{}".format(port, anavnet.get_ports()[port]))
+        sys.exit()
+
+    if args.total:
+        anavnet = AnavNet()
+        try:
+            anavnet.set_port(args.total[0])
+            print("Total messages in {} is {}".format(anavnet.get_port_name(), anavnet.get_total_messages()))
+        except Exception as e:
+            print("Error: {}".format(e))
+            sys.exit(1)
+        sys.exit()
+
+    if args.json:
+        anavnet = AnavNet()
+        try:
+            anavnet.set_port(args.json[0])
+            print(json.dumps(anavnet.get_message(args.json[1]), indent=4, sort_keys=False))
+        except Exception as e:
+            print("Error: {}".format(e))
+            sys.exit(1)
+        sys.exit()
+
+    if args.text:
+        anavnet = AnavNet()
+        try:
+            anavnet.set_port(args.text[0])
+            values = anavnet.get_message(args.text[1])
+        except Exception as e:
+            print("Error: {}".format(e))
+            sys.exit(1)
+
+        message = "Aviso Local: {} de {} - Período de: {} a {}\n".format(
+            values['num_aviso'],
+            values['dt_promulgacao'],
+            values['dt_inicio'],
+            values['dt_fim']
+        )
+
+        message += "Promulgado por: {}\n".format(values['ent_promulgacao'])
+        message += "Local: {}\n".format(values['local'])
+        message += "Assunto: {}\n\n".format(values['assunto'])
+        message += values['descricao']
+        # message += values['dt_cancelamento']
+
+        print(message)
+        sys.exit()

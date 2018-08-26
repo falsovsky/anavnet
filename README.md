@@ -49,5 +49,5 @@ $ python -m unittest discover -s tests
 License
 ----
 
-BSD
+BSD-3-Clause
 
