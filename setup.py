@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf8") as fh:
 
 setuptools.setup(
     name="anavnet",
-    version="0.0.3",
+    version="0.0.1",
     author="Pedro de Oliveira",
     author_email="falsovsky@gmail.com",
     description="Client library to the AnavNet website, which provides messages about current portuguese ports warnings",

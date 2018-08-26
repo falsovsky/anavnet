@@ -1,1 +1,1 @@
-name = "anavnet"
+from .anavnet import AnavNet
