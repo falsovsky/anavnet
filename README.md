@@ -26,6 +26,7 @@ $ pip install -r requirements.txt
 Or use [virtualenv](https://virtualenv.pypa.io/en/stable/).
 
 ### Usage
+
 ```python
 >>> from anavnet import AnavNet
 >>> anavnet = AnavNet()
@@ -34,9 +35,14 @@ Or use [virtualenv](https://virtualenv.pypa.io/en/stable/).
 >>> 12
 >>> anavnet.get_message(1)
 {'num_aviso': '288/18', 'dt_promulgacao': '23-Ago-2018', 'dt_inicio': '24-Ago-2018', 'dt_fim': '05-Set-2018', 'ent_promulgacao': 'Capitania do Porto de Lisboa - CAPIMARLISBOA', 'local': 'Rio Tejo - Cais Militar do Portinho da Costa.', 'assunto': 'Área interdita à navegação', 'descricao': 'No período de 24AGO a 05SET, está interdita a navegação a menos de 50 metros do Cais Militar do Portinho da Costa.', 'dt_cancelamento': 'Data de cancelamento: 05-Set-2018'}
->>> anavnet.get_message(1, formatted=True)
-'Aviso Local: 288/18 de 23-Ago-2018 - Período de: 24-Ago-2018 a 05-Set-2018\nPromulgado por: Capitania do Porto de Lisboa - CAPIMARLISBOA\nLocal: Rio Tejo - Cais Militar do Portinho da Costa.\nAssunto: Área interdita à navegação\n\nNo período de 24AGO a 05SET, está interdita a navegação a menos de 50 metros do Cais Militar do Portinho da Costa.'
 ```
+
+Or you can use the console script:
+
+```sh
+$ anavclient --help
+```
+ 
 
 ### Tests
 
