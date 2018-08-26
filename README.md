@@ -1,7 +1,7 @@
 
 # AnavNet
 
-Client library to the [AnavNet](http://anavnet.hidrografico.pt/AvisosLocais/AvisosLocais.aspx) website, which provides messages about current Portuguese ports notices.
+Client library to the [AnavNet](http://anavnet.hidrografico.pt/AvisosLocais/AvisosLocais.aspx) website, which provides messages about current portuguese ports warnings.
 * Includes all the available port names and identifiers.
 * Counts the total messages per port.
 * Parses all the items of the messages.
