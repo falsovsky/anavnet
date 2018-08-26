@@ -30,7 +30,7 @@ Or use [virtualenv](https://virtualenv.pypa.io/en/stable/).
 >>> from anavnet import AnavNet
 >>> anavnet = AnavNet()
 >>> anavnet.set_port(16)
->>> anavnet.total
+>>> anavnet.get_total_messages()
 >>> 12
 >>> anavnet.get_message(1)
 {'num_aviso': '288/18', 'dt_promulgacao': '23-Ago-2018', 'dt_inicio': '24-Ago-2018', 'dt_fim': '05-Set-2018', 'ent_promulgacao': 'Capitania do Porto de Lisboa - CAPIMARLISBOA', 'local': 'Rio Tejo - Cais Militar do Portinho da Costa.', 'assunto': 'Área interdita à navegação', 'descricao': 'No período de 24AGO a 05SET, está interdita a navegação a menos de 50 metros do Cais Militar do Portinho da Costa.', 'dt_cancelamento': 'Data de cancelamento: 05-Set-2018'}
