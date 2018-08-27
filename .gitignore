@@ -1,3 +1,6 @@
 *.egg-info
 build
 dist
+.coverage
+.eggs
+__pycache__
