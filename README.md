@@ -35,6 +35,16 @@ $ pip install anavnet
 
 ```sh
 $ anavclient --help
+
+usage: anavclient [-h]
+                  (--list | --total TOTAL | --text TEXT TEXT | --json JSON JSON)
+
+optional arguments:
+  -h, --help        show this help message and exit
+  --list            Lists available ports
+  --total TOTAL     Gets the total of messages.Argument: PORT_ID
+  --text TEXT TEXT  Get message as formatted text. Arguments: PORT_ID, MESSAGE_INDEX
+  --json JSON JSON  Get message as JSON. Arguments: PORT_ID, MESSAGE_INDEX
 ```
  
 ### Tests
