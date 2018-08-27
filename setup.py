@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.0.1",
     author="Pedro de Oliveira",
     author_email="falsovsky@gmail.com",
-    description="Client library to the AnavNet website, which provides messages about current portuguese ports warnings",
+    description="Client library to the AnavNet website, which provides the current warnings from the Portuguese maritime ports",
     long_description=long_description,
     long_description_content_type="text/markdown",
     license='BSD-3-Clause',
