@@ -21,7 +21,7 @@ if __name__ == '__main__':
         anavnet = AnavNet()
         print(u"The current available ports are:")
         for port in anavnet.get_ports():
-            print(" * {}\t{}".format(port, anavnet.get_ports()[port]).decode('utf-8'))
+            print(u" * {}\t{}".format(port, anavnet.get_ports()[port]))
         sys.exit()
 
     if args.total:
