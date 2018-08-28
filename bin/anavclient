@@ -19,9 +19,9 @@ if __name__ == '__main__':
 
     if args.list:
         anavnet = AnavNet()
-        print("The current available ports are:")
+        print(u"The current available ports are:")
         for port in anavnet.get_ports():
-            print(" * {}\t{}".format(port, anavnet.get_ports()[port]))
+            print(" * {}\t{}".format(port, anavnet.get_ports()[port]).decode('utf-8'))
         sys.exit()
 
     if args.total:
@@ -53,18 +53,18 @@ if __name__ == '__main__':
             print("Error: {}".format(e))
             sys.exit(1)
 
-        message = "Aviso Local: {} de {} - Período de: {} a {}\n".format(
+        message = u"Aviso Local: {} de {} - Período de: {} a {}\n".format(
             values['num_aviso'],
             values['dt_promulgacao'],
             values['dt_inicio'],
             values['dt_fim']
-        )
+        ).encode('utf-8')
 
-        message += "Promulgado por: {}\n".format(values['ent_promulgacao'])
-        message += "Local: {}\n".format(values['local'])
-        message += "Assunto: {}\n\n".format(values['assunto'])
-        message += values['descricao']
-        # message += values['dt_cancelamento']
+        message += u"Promulgado por: {}\n".format(values['ent_promulgacao']).encode('utf-8')
+        message += u"Local: {}\n".format(values['local']).encode('utf-8')
+        message += u"Assunto: {}\n\n".format(values['assunto']).encode('utf-8')
+        message += values['descricao'].encode('utf-8')
+        # message += values['dt_cancelamento'].encode('utf-8')
 
-        print(message)
+        print(message.decode('utf-8'))
         sys.exit()
